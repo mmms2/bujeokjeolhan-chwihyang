@@ -346,7 +346,8 @@ body {background:#252c36!important}
  89%{opacity:var(--o)}
  100%{transform:translate3d(var(--drift),calc(100vh + 42px),0);opacity:0}
 }
-@media(max-width:690px){.winter-snow>span:nth-child(n+27){display:none}}
+/* Keep mobile snowfall evenly distributed across the full viewport instead of cutting off the right side. */
+@media(max-width:690px){.winter-snow>span:nth-child(3n){display:none}}
 /* Snowfall remains gently animated on this page, even when the site's
    older global reduce-motion rule disables other animations. */
 @media(prefers-reduced-motion:reduce){
