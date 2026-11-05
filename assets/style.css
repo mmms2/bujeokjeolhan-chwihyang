@@ -347,7 +347,11 @@ body {background:#252c36!important}
  100%{transform:translate3d(var(--drift),calc(100vh + 42px),0);opacity:0}
 }
 /* Keep mobile snowfall evenly distributed across the full viewport instead of cutting off the right side. */
-@media(max-width:690px){.winter-snow>span:nth-child(3n){display:none}}
+@media(max-width:690px){
+ .winter-snow>span:nth-child(3n){display:none}
+ /* A very small size lift on mobile without changing snowfall timing or density. */
+ .winter-snow>span{width:calc(var(--s) + .6px);height:calc(var(--s) + .6px)}
+}
 /* Snowfall remains gently animated on this page, even when the site's
    older global reduce-motion rule disables other animations. */
 @media(prefers-reduced-motion:reduce){
